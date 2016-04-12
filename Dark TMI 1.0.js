@@ -588,9 +588,22 @@ layout4.addView(btns4[n]);
 checkTf = true;
 
 var pad = dip2px(ctx, 5);
-for(var n=1;n<5;n++){
-eval("layout"+n+".setPadding(pad, pad, pad, pad);var scroll"+n+" = new android.widget.ScrollView(ctx);scroll"+n+".addView(layout"+n+");layout.addView(scroll"+n+");");
-}
+layout1.setPadding(pad, pad, pad, pad);
+layout2.setPadding(pad, pad, pad, pad);
+layout3.setPadding(pad, pad, pad, pad);
+layout4.setPadding(pad, pad, pad, pad);
+var scroll1 = new android.widget.ScrollView(ctx);
+var scroll2 = new android.widget.ScrollView(ctx);
+var scroll3 = new android.widget.ScrollView(ctx);
+var scroll4 = new android.widget.ScrollView(ctx);
+scroll1.addView(layout1);
+scroll2.addView(layout2);
+scroll3.addView(layout3);
+scroll4.addView(layout4);
+layout.addView(scroll1);
+layout.addView(scroll2);
+layout.addView(scroll3);
+layout.addView(scroll4);
 
 var scroll = new android.widget.HorizontalScrollView(ctx);
 scroll.addView(layout);
